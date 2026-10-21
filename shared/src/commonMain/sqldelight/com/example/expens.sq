@@ -1,0 +1,48 @@
+    CREATE TABLE ExpensBase (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        sume INTEGER,
+        category TEXT NOT NULL,
+        date TEXT NOT NULL
+    );
+
+    selectAll:
+    SELECT * FROM ExpensBase;
+
+    insertExpens:
+    INSERT INTO ExpensBase(sume, category, date)
+    VALUES (?, ?, ?);
+
+
+
+
+    getMonthSum:
+    SELECT COALESCE(SUM(sume), 0)
+    FROM ExpensBase
+    WHERE date LIKE ?;
+
+    getLast10Expenses:
+    SELECT *
+    FROM ExpensBase
+    ORDER BY id DESC
+    LIMIT 10;
+
+
+    getWeekExpenses:
+    SELECT *
+    FROM ExpensBase
+    WHERE date >= ?
+    ORDER BY date DESC;
+
+
+    getMonthExpenses:
+    SELECT *
+    FROM ExpensBase
+    WHERE date LIKE ?
+    ORDER BY date DESC;
+
+    getExpensesBetweenDates:
+    SELECT *
+    FROM ExpensBase
+    WHERE date >= ?
+      AND date <= ?
+    ORDER BY date ASC;
