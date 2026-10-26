@@ -18,12 +18,12 @@ fun SalaryScreen(viewModelSt: SettingsViewModel){
     var salaryInput by remember { mutableStateOf("") }
 
     Column {
-        Text("Введите зарплату")
+        Text("Gehalt eingeben")
 
         OutlinedTextField(
             value = salaryInput,
             onValueChange = { salaryInput = it },
-            label = { Text("Salary") }
+            label = { Text("Gehalt") }
         )
 
         Button(onClick = {
@@ -32,7 +32,7 @@ fun SalaryScreen(viewModelSt: SettingsViewModel){
 
             }
         }) {
-            Text("Сохранить")
+            Text("Speichern")
         }
     }
 }

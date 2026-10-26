@@ -39,7 +39,7 @@ fun DatabaseScreen(
             ExtendedFloatingActionButton(
                 onClick = onChartsClick
             ) {
-                Text("Графики")
+                Text("Statistik")
             }
         }
     ) { innerPadding ->
@@ -50,7 +50,7 @@ fun DatabaseScreen(
                 .padding(innerPadding)
         ) {
             Text(
-                text = "Balance: $balance",
+                text = "Kontostand: $balance",
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
@@ -69,7 +69,7 @@ fun DatabaseScreen(
                         viewModelEx.changeFilter(FilterType.LAST10)
                     },
                     label = {
-                        Text("Останні 10")
+                        Text("Letzte 10")
                     }
                 )
 
@@ -79,7 +79,7 @@ fun DatabaseScreen(
                         viewModelEx.changeFilter(FilterType.WEEK)
                     },
                     label = {
-                        Text("Тиждень")
+                        Text("Woche")
                     }
                 )
 
@@ -89,7 +89,7 @@ fun DatabaseScreen(
                         viewModelEx.changeFilter(FilterType.MONTH)
                     },
                     label = {
-                        Text("Місяць")
+                        Text("Monat")
                     }
                 )
             }

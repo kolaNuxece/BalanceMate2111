@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontVariation
 import com.example.first_multiplatformapp.XML.App
 import com.example.first_multiplatformapp.Repository.CategoryRepository
 import com.example.first_multiplatformapp.Repository.ExpenseRepository
@@ -45,7 +44,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    App(viewModel, viewModelSt)
+                    App(viewModelSt, viewModel)
                 }
             }
         }

@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -50,15 +51,28 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.text.input.KeyboardType
 import com.example.first_multiplatformapp.ViewModels.ExpensViewModel
 import com.example.first_multiplatformapp.ViewModels.SettingsViewModel
+import first_multiplatformapp.shared.generated.resources.Res
+import first_multiplatformapp.shared.generated.resources.yesterday
+import first_multiplatformapp.shared.generated.resources.addButton
+import first_multiplatformapp.shared.generated.resources.amount
+import first_multiplatformapp.shared.generated.resources.category
+import first_multiplatformapp.shared.generated.resources.deleteSalary
+import first_multiplatformapp.shared.generated.resources.enterCustomCategory
+import first_multiplatformapp.shared.generated.resources.mainName
+import first_multiplatformapp.shared.generated.resources.newCategory
+import first_multiplatformapp.shared.generated.resources.salary
+import first_multiplatformapp.shared.generated.resources.todayButton
 import kotlinx.datetime.Clock
 import kotlinx.datetime.DateTimeUnit
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.minus
 import kotlinx.datetime.toLocalDateTime
+import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class, androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
@@ -113,7 +127,9 @@ fun MainScreen(
             CenterAlignedTopAppBar(
                 title = {
                     Text(
-                        "Geld Assistent",
+                    //    "Geld Assistent",
+                        (stringResource(Res.string.mainName)),
+
                         fontWeight = FontWeight.Bold,
                         fontSize = 35.sp
                     )
@@ -128,7 +144,7 @@ fun MainScreen(
             ) {
                 Icon(
                     Icons.Default.Add,
-                    contentDescription = "Add Category"
+                    contentDescription = "Kategorie hinzufügen"
                 )
             }
         }
@@ -139,11 +155,13 @@ fun MainScreen(
                 .padding(innerPadding)
                 .padding(16.dp)
                 .fillMaxSize()
+                .verticalScroll(rememberScrollState())
         ) {
             Spacer(modifier = Modifier.height(30.dp))
 
             Text(
-                "Gehalt: $salary",
+          //      "Gehalt: $salary",
+                "${stringResource(Res.string.salary)}: $salary",
                 modifier = Modifier.fillMaxWidth(),
                 fontSize = 22.sp
             )
@@ -151,7 +169,7 @@ fun MainScreen(
             Button(
                 onClick = { viewModelSt.clearSalary() }
             ) {
-                Text("Delete Gehalt")
+                Text((stringResource(Res.string.deleteSalary)))
             }
 
             Spacer(modifier = Modifier.height(50.dp))
@@ -176,7 +194,7 @@ fun MainScreen(
                                 sume = input
                             }
                         },
-                        label = { Text("Sume") },
+                        label = { Text((stringResource(Res.string.amount))) },
                         keyboardOptions = KeyboardOptions(
                             keyboardType = KeyboardType.Number
                         )
@@ -185,7 +203,7 @@ fun MainScreen(
                     Spacer(modifier = Modifier.height(25.dp))
 
                     Text(
-                        text = "Category",
+                        text = stringResource(Res.string.category),
                         style = MaterialTheme.typography.titleMedium
                     )
 
@@ -204,7 +222,7 @@ fun MainScreen(
                         OutlinedTextField(
                             value = customCategory,
                             onValueChange = { customCategory = it },
-                            label = { Text("Verwalten Sie Ihre Kategorie") },
+                            label = { Text(stringResource(Res.string.enterCustomCategory)) },
                             modifier = Modifier.fillMaxWidth()
                         )
                     }
@@ -245,7 +263,7 @@ fun MainScreen(
                             date = ""
                         }
                     ) {
-                        Text("Hinzufügen")
+                        Text(stringResource(Res.string.addButton))
                     }
                 }
             }
@@ -329,14 +347,14 @@ private fun DateSelector(
             modifier = buttonModifier,
             contentPadding = PaddingValues(0.dp)
         ) {
-            Text("Heute", maxLines = 1)
+            Text(stringResource(Res.string.todayButton), maxLines = 1)
         }
 
         Button(
             onClick = onYesterdayClick,
             modifier = buttonModifier
         ) {
-            Text("Gestern", maxLines = 1)
+            Text(stringResource(Res.string.yesterday), maxLines = 1)
         }
 
         IconButton(
@@ -375,7 +393,7 @@ private fun AddCategorySheet(
                 .navigationBarsPadding()
         ) {
             Text(
-                "New Category",
+                stringResource(Res.string.newCategory),
                 style = MaterialTheme.typography.headlineSmall,
                 modifier = Modifier.align(Alignment.CenterHorizontally)
             )
@@ -397,7 +415,7 @@ private fun AddCategorySheet(
                 enabled = categoryName.isNotBlank(),
                 onClick = onAddCategory
             ) {
-                Text("Hinzufügen")
+                Text(stringResource(Res.string.addButton))
             }
 
             Spacer(modifier = Modifier.height(20.dp))

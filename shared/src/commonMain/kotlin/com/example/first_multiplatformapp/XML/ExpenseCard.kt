@@ -33,7 +33,7 @@ fun ExpenseCard(
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
-                text = "Сума: ${expense.sume} грн"
+                text = "Summe: ${expense.sume}"
             )
 
             Text(

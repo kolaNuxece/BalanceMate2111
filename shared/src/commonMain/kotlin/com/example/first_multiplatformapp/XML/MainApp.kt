@@ -22,6 +22,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
 import com.example.first_multiplatformapp.ViewModels.ExpensViewModel
 import com.example.first_multiplatformapp.ViewModels.SettingsViewModel
+import first_multiplatformapp.shared.generated.resources.Res
+import org.jetbrains.compose.resources.stringResource
+
 
 @Composable
 fun MainApp(
@@ -50,7 +53,7 @@ fun MainApp(
                                     contentDescription = "Главная"
                                 )
                             },
-                            label = { Text("Головна") }
+                         //   label = { Text(stringResource(Res.string.greeting))}
                         )
 
                         NavigationBarItem(
@@ -62,7 +65,7 @@ fun MainApp(
                                     contentDescription = "Статистика"
                                 )
                             },
-                            label = { Text("Статистика") }
+                            label = { Text("Statistik") }
                         )
 
                         NavigationBarItem(
@@ -74,7 +77,7 @@ fun MainApp(
                                     contentDescription = "Профіль"
                                 )
                             },
-                            label = { Text("Профіль") }
+                            label = { Text("Profil") }
                         )
                     }
                 }

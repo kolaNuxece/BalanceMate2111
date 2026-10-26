@@ -38,6 +38,10 @@ kotlin {
             implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
             implementation("com.russhwolf:multiplatform-settings:1.1.1")
 
+            implementation(libs.androidx.datastore)
+            implementation(libs.androidx.datastore.preferences)
+
+
         }
         androidMain.dependencies {
             implementation(libs.sqldelight.android)

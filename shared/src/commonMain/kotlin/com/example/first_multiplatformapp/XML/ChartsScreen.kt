@@ -41,7 +41,7 @@ fun ChartsScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Text("Графики")
+                    Text("Diagramme")
                 },
                 navigationIcon = {
                     IconButton(
@@ -49,7 +49,7 @@ fun ChartsScreen(
                     ) {
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "Назад"
+                            contentDescription = "zurück"
                         )
                     }
                 }
@@ -68,7 +68,7 @@ fun ChartsScreen(
                     .padding(16.dp)
             ) {
                 Text(
-                    text = "Витрати за категоріями",
+                    text = "Ausgaben nach Kategorie",
                     fontSize = 24.sp
                 )
 
@@ -86,7 +86,7 @@ fun ChartsScreen(
                             viewModelEx.loadCategoryChartLast7Days()
                         },
                         label = {
-                            Text("7 днів")
+                            Text("7 Tage")
                         }
                     )
 
@@ -96,7 +96,7 @@ fun ChartsScreen(
                             viewModelEx.loadCategoryChartCurrentMonth()
                         },
                         label = {
-                            Text("Місяць")
+                            Text("Monat")
                         }
                     )
                 }
