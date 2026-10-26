@@ -1,0 +1,17 @@
+<resources>
+    <string name="mainScreen">Главная</string>
+    <string name="statistik">Статистика</string>
+    <string name="Profil">Профиль</string>
+    <string name="mainName">Денежный помощник</string>
+    <string name="addCategory">Добавить категорию</string>
+    <string name="salary">Зарплата</string>
+    <string name="deleteSalary">Удалить зарплату</string>
+    <string name="amount">Сумма</string>
+    <string name="category">Категория</string>
+    <string name="enterCustomCategory">Введите свою категорию</string>
+    <string name="addButton">Добавить</string>
+    <string name="todayButton">Сегодня</string>
+    <string name="yesterday">Вчера</string>
+    <string name="newCategory">Новая категория</string>
+    <string name="name">Название</string>
+</resources>

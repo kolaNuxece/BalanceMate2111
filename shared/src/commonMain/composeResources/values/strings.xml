@@ -1,0 +1,17 @@
+<resources>
+    <string name="mainScreen">Startseite</string>
+    <string name="statistik">Statistik</string>
+    <string name="Profil">Profil</string>
+    <string name="mainName">Geld Assistent</string>
+    <string name="addCategory">Kategorie hinzufügen</string>
+    <string name="salary">Gehalt</string>
+    <string name="deleteSalary">Gehalt löschen</string>
+    <string name="amount">Betrag</string>
+    <string name="category">Kategorie</string>
+    <string name="enterCustomCategory">Eigene Kategorie eingeben</string>
+    <string name="addButton">Hinzufügen</string>
+    <string name="todayButton">Heute</string>
+    <string name="yesterday">Gestern</string>
+    <string name="newCategory">Neue Kategorie</string>
+    <string name="name">Name</string>
+</resources>
